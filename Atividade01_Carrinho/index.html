@@ -17,12 +17,18 @@
     <h1>Seu Carrinho</h1>
     <ul id="lista-produtos"></ul>
     <hr>
-    <h1>Produtos</h1>
-    <div id="carrinho-select">
-        <select id="select-produtos">
-            <option>Camiseta - Quantidade: 2 - Valor</option>
-        </select>
+    <div id="form-carrinho">
+        <form>
+            <label for="select-carrinho">Escolha um produto:</label>
+            <select id="select-carrinho">
+                <option value="0">Camiseta</option>
+                <option value="1">Calça Jeans</option>
+                <option value="2">Tênis</option>
+            </select>
+        </form>
+        <button id="btnAddSelect">Adicionar ao carrinho</button>
     </div>
+    <h1>Produtos</h1>
     <div id="produtos">
         
     </div>

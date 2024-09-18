@@ -22,6 +22,19 @@ const produtos = [
     }
 ]
 
+function inserirCarrinhoSelect() {
+    const selectCarrinho = document.getElementById('select-carrinho');
+    const btnAddSelect = document.getElementById('btnAddSelect');
+    btnAddSelect.addEventListener('click', () => {
+        let selectValue = selectCarrinho.options[selectCarrinho.selectedIndex].value;
+        produtos.forEach(produto => {
+            if (produto.id == selectValue) {
+                adicionarProduto(produto.id, produto.nome, produto.valor, produto.quantidade)
+            }
+        })
+    })
+}
+
 const cardsProdutos = document.getElementById('produtos');
 
 function renderizarProdutos() {
@@ -33,7 +46,7 @@ function renderizarProdutos() {
             <img src=${produto.img} alt=${produto.nome}>
             <p>Id: ${produto.id}</p>
             <p>Nome: ${produto.nome}</p>
-            <p>Valor: ${produto.valor}</p>
+            <p>Valor: R$${produto.valor.toFixed(2)}</p>
             <p>Quantidade: ${produto.quantidade}</p>
             <button onclick="adicionarProduto(${produto.id}, '${produto.nome}', ${produto.valor}, ${produto.quantidade})">Adicionar ao carrinho</button>
         `
@@ -41,6 +54,8 @@ function renderizarProdutos() {
     })
 }
 
+inserirCarrinhoSelect();
+exibirCarrinho();
 renderizarProdutos();
 
 
@@ -48,10 +63,10 @@ renderizarProdutos();
 function adicionarProduto(id, nome, valor, quantidade) {
     // Obter os produtos do localStorage ou criar um novo array vazio
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    
+
     // Adicionar o novo produto ao array
     carrinho.unshift({ id, nome, valor, quantidade });
-    
+
     // Salvar o carrinho atualizado no localStorage
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
@@ -76,6 +91,7 @@ function exibirCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinho'));
     let total = 0;
     const pTotal = document.createElement('p');
+    
     // Verificar se o carrinho está vazio
     if (carrinho && carrinho.length > 0) {
         // Exibir os produtos em um elemento HTML (ajuste conforme sua estrutura HTML)
@@ -98,7 +114,7 @@ function exibirCarrinho() {
             pTotal.innerHTML = `<strong>Total: R$${total.toFixed(2)}</strong>`;
         });
         listaProdutos.appendChild(pTotal);
-        
+
     } else {
         // Exibir a mensagem de carrinho vazio
         const listaProdutos = document.getElementById('lista-produtos');

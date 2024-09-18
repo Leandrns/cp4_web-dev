@@ -52,6 +52,7 @@ h1 {
     color: white;
     border: solid 2px black;
     transition: all 0.2s ease-in;
+    cursor: pointer;
 }
 
 .produto button:hover {
@@ -80,6 +81,8 @@ h1 {
     transition: all 0.2s;
     background-color: black;
     color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 #lista-produtos div button:hover {
@@ -88,3 +91,32 @@ h1 {
     background-color: red;
 }
 
+#form-carrinho {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    justify-content: center;
+}
+
+#select-carrinho {
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btnAddSelect {
+    padding: 0 8px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    border: solid 2px black;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+#btnAddSelect:hover {
+    background-color: white;
+    color: black;
+}
