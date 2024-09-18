@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+
+body {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+#produtos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.produto:hover {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.651);
+    scale: 1.01;
+}
+
+.produto img {
+    width: 200px;
+    border-bottom: solid 2px rgb(65, 65, 65);
+}
+
+.produto button {
+    padding: 8px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    border: solid 2px black;
+    transition: all 0.2s ease-in;
+}
+
+.produto button:hover {
+    background-color: white;
+    color: black;
+}
+
+#lista-produtos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+#lista-produtos div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#lista-produtos div button {
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 2px black;
+    transition: all 0.2s;
+    background-color: black;
+    color: white;
+}
+
+#lista-produtos div button:hover {
+    border-color: red;
+    scale: 1.02;
+    background-color: red;
+}
+

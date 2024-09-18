@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+
+body {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 60%;
+}
+
+.container div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container input {
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 2px black;
+}
+
+.container button {
+    padding: 8px;
+    border-radius: 8px;
+    border: solid 1px black;
+}
+
+#listaFilmes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#listaFilmes li {
+    padding: 0 12px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: solid 2px black;
+    border-radius: 12px;
+    justify-content: space-between;
+    font-weight: 700;
+}
