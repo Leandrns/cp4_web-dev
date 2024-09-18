@@ -88,7 +88,7 @@ function exibirCarrinho() {
             const btnRemove = document.createElement('button');
             btnRemove.innerText = 'Remover';
             btnRemove.addEventListener('click', () => removerProduto(carrinho.indexOf(produto)));
-            li.textContent = `${produto.nome} - Quantidade: ${produto.quantidade} - Valor: R$ ${produto.valor.toFixed(2)}`;
+            li.textContent = `${produto.nome} - Quantidade: ${produto.quantidade} - Valor: R$ ${produto.valor}`;
             listaProdutos.append(div);
             div.appendChild(li);
             div.appendChild(btnRemove);
